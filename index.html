@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Viva Memoria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🧠</div>
+
+    <div>
+        <h1>Viva Memoria</h1>
+        <p>Tu memoria, siempre contigo 💙</p>
+    </div>
+
+    <div class="perfil-header"
+         onclick="mostrarPerfil()"
+         title="Abrir mi perfil">
+
+        <div class="perfil-header-icon" id="fotoHeader">
+            👤
+        </div>
+
+        <div class="perfil-header-nombre"
+             id="nombreHeader">
+            Mi perfil
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="welcome">
+
+        <h2 id="saludoUsuario">
+            ¡Bienvenido/a! 👋
+        </h2>
+
+        <p>
+            Selecciona una opción para comenzar.
+        </p>
+
+    </div>
+
+
+    <div class="menu">
+
+        <button onclick="mostrarMemoria()">
+            🧠
+            <span>Ejercicio de memoria</span>
+        </button>
+
+        <button onclick="mostrarRecordatorios()">
+            ⏰
+            <span>Recordatorios</span>
+        </button>
+
+        <button onclick="mostrarCalendario()">
+            📅
+            <span>Calendario</span>
+        </button>
+
+        <button onclick="mostrarFamilia()">
+            👨‍👩‍👧
+            <span>Mi familia</span>
+        </button>
+
+        <button onclick="mostrarPerfil()">
+            👤
+            <span>Mi perfil</span>
+        </button>
+
+        <button onclick="mostrarSeguridad()">
+            🛡️
+            <span>Seguridad</span>
+        </button>
+
+    </div>
+
+
+    <div id="contenido">
+
+        <div class="card">
+
+            <h2>💙 Viva Memoria</h2>
+
+            <p>
+                Aplicación de apoyo para ejercicios de memoria,
+                recordatorios y organización personal.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    Viva Memoria © 2026
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
