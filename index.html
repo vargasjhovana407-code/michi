@@ -1,3527 +1,680 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-<title>Viva Memoria</title>
-
+<title>MariAle - Sabor Viacheño</title>
 
 <style>
 
-/* =====================================================
-   CONFIGURACIÓN GENERAL
-===================================================== */
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,Helvetica,sans-serif;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
-
 
 body{
-
-    background:
-
-        linear-gradient(
-            rgba(239,247,250,.92),
-            rgba(239,247,250,.92)
-        ),
-
-        url("fondo.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-attachment:fixed;
-
-    background-repeat:no-repeat;
-
-    color:#263746;
-
-    min-height:100vh;
-
+    background:#f5f0df;
+    color:#333;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
-
+/* ENCABEZADO */
 header{
-
-    background:
-
-        linear-gradient(
-            rgba(63,81,181,.90),
-            rgba(91,107,192,.90)
-        ),
-
-        url("https://cdn.shopify.com/s/files/1/1619/4221/files/21-2.jpg?v=1720112676");
-
-    background-size:cover;
-
-    background-position:center;
-
+    background:#123d22;
     color:white;
-
-    padding:20px;
-
+    padding:12px 6%;
     display:flex;
-
+    justify-content:space-between;
     align-items:center;
-
-    gap:15px;
-
-    border-radius:0 0 25px 25px;
-
     position:sticky;
-
     top:0;
-
-    z-index:10;
-
-    box-shadow:
-        0 4px 15px rgba(45,62,90,.20);
-
+    z-index:1000;
 }
-
-
-/* =====================================================
-   LOGO
-===================================================== */
 
 .logo{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:50%;
-
-    background:#ffffff;
-
     display:flex;
-
-    justify-content:center;
-
     align-items:center;
-
-    font-size:32px;
-
-    box-shadow:
-        0 2px 8px rgba(0,0,0,.15);
-
-}
-
-
-header h1{
-
-    font-size:30px;
-
-    text-shadow:
-        2px 2px 5px rgba(0,0,0,.25);
-
-}
-
-
-header p{
-
-    font-size:14px;
-
-    margin-top:4px;
-
-    text-shadow:
-        1px 1px 3px rgba(0,0,0,.20);
-
-}
-
-
-/* =====================================================
-   PERFIL DEL HEADER
-===================================================== */
-
-.perfil-header{
-
-    margin-left:auto;
-
-    display:flex;
-
-    align-items:center;
-
     gap:10px;
-
-    background:rgba(255,255,255,.18);
-
-    padding:8px 12px;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
 }
 
-
-.perfil-header-icon{
-
-    width:42px;
-
-    height:42px;
-
+.logo img{
+    width:60px;
+    height:60px;
     border-radius:50%;
+    object-fit:cover;
+}
 
-    background:#ffffff;
-
-    color:#6b7fc4;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+.logo h1{
+    color:#f4c95d;
     font-size:24px;
-
-    overflow:hidden;
-
-    flex-shrink:0;
-
 }
 
-
-.perfil-header-icon img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-.perfil-header-nombre{
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    max-width:150px;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-    white-space:nowrap;
-
-}
-
-
-/* =====================================================
-   CONTENEDOR
-===================================================== */
-
-.container{
-
-    width:100%;
-
-    max-width:900px;
-
-    margin:auto;
-
-    padding:20px;
-
-}
-
-
-/* =====================================================
-   BIENVENIDA
-===================================================== */
-
-.welcome{
-
-    background:rgba(255,255,255,.92);
-
-    padding:22px;
-
-    border-radius:20px;
-
-    margin-bottom:20px;
-
-    box-shadow:
-        0 3px 12px rgba(65,85,110,.10);
-
-    border-left:6px solid #7b8fd8;
-
-}
-
-
-.welcome h2{
-
-    margin-bottom:8px;
-
-    color:#40558f;
-
-}
-
-
-.welcome p{
-
-    color:#526270;
-
-}
-
-
-/* =====================================================
-   MENU PRINCIPAL
-===================================================== */
-
-.menu{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:15px;
-
-}
-
-
-.menu button{
-
-    border:none;
-
-    background:#ffffff;
-
-    color:#40558f;
-
-    border-radius:20px;
-
-    min-height:130px;
-
-    padding:15px;
-
-    font-size:40px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 4px 14px rgba(65,85,110,.12);
-
-    transition:.2s;
-
-    border:2px solid #e1e8f5;
-
-}
-
-
-.menu button:hover{
-
-    transform:scale(1.02);
-
-    background:#f5f8ff;
-
-    border-color:#9aa9dd;
-
-}
-
-
-.menu span{
-
+.logo span{
     display:block;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    margin-top:10px;
-
-    color:#34495e;
-
-}
-
-
-#contenido{
-
-    margin-top:20px;
-
-}
-
-
-/* =====================================================
-   TARJETAS
-===================================================== */
-
-.card{
-
-    background:rgba(255,255,255,.96);
-
-    padding:22px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 4px 14px rgba(65,85,110,.10);
-
-    margin-bottom:15px;
-
-    border:1px solid #e2e9f2;
-
-}
-
-
-.card h2{
-
-    margin-bottom:15px;
-
-    color:#5369a8;
-
-}
-
-
-/* =====================================================
-   BOTONES
-===================================================== */
-
-.btn{
-
-    border:none;
-
-    background:#6685d6;
-
     color:white;
-
-    padding:13px 18px;
-
-    border-radius:12px;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    margin:5px 3px;
-
-    box-shadow:
-        0 2px 6px rgba(60,80,130,.15);
-
+    font-size:12px;
 }
 
-
-.btn:hover{
-
-    background:#5574c7;
-
-}
-
-
-.btn-danger{
-
-    background:#d97979;
-
-}
-
-
-.btn-danger:hover{
-
-    background:#c96666;
-
-}
-
-
-.btn-green{
-
-    background:#6dbb8a;
-
-}
-
-
-.btn-green:hover{
-
-    background:#58a976;
-
-}
-
-
-.btn-gray{
-
-    background:#7b8794;
-
-}
-
-
-.btn-gray:hover{
-
-    background:#697581;
-
-}
-
-
-/* =====================================================
-   FORMULARIOS
-===================================================== */
-
-input,
-textarea,
-select{
-
-    width:100%;
-
-    padding:13px;
-
-    margin:7px 0 12px;
-
-    border:1px solid #cbd8e6;
-
-    border-radius:10px;
-
-    font-size:16px;
-
-    background:#fbfdff;
-
-    color:#263746;
-
-}
-
-
-input:focus,
-textarea:focus,
-select:focus{
-
-    outline:none;
-
-    border-color:#8095d6;
-
-    box-shadow:
-        0 0 0 3px rgba(128,149,214,.15);
-
-}
-
-
-label{
-
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
     font-weight:bold;
-
-    color:#405467;
-
-}
-
-
-.item{
-
-    background:#f4f8fc;
-
-    padding:15px;
-
-    border-radius:14px;
-
-    margin:10px 0;
-
-    border:1px solid #e2eaf2;
-
-}
-
-
-.item strong{
-
-    display:block;
-
-    font-size:18px;
-
-    margin-bottom:5px;
-
-    color:#40558f;
-
-}
-
-
-/* =====================================================
-   MEMORIA
-===================================================== */
-
-.instruccion{
-
-    background:#edf3ff;
-
-    padding:18px;
-
-    border-radius:15px;
-
-    margin:15px 0;
-
-    line-height:1.6;
-
-    color:#405467;
-
-    border-left:5px solid #7b8fd8;
-
-}
-
-
-.imagenes-memoria{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:12px;
-
-    margin:20px 0;
-
-}
-
-
-.imagen-memoria{
-
-    background:#e8eefb;
-
-    border:3px solid transparent;
-
-    border-radius:18px;
-
-    min-height:110px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-direction:column;
-
-    font-size:45px;
-
-    cursor:pointer;
-
-    transition:.2s;
-
-    color:#405467;
-
-}
-
-
-.imagen-memoria:hover{
-
-    background:#dfe8fa;
-
-}
-
-
-.imagen-memoria span{
-
     font-size:14px;
-
-    font-weight:bold;
-
-    margin-top:5px;
-
-    color:#405467;
-
 }
 
-
-.imagen-memoria.seleccionada{
-
-    border-color:#6685d6;
-
-    background:#dce6fb;
-
-    transform:scale(1.03);
-
+nav a:hover{
+    color:#f4c95d;
 }
 
-
-.contador{
-
-    text-align:center;
-
-    font-size:25px;
-
-    font-weight:bold;
-
-    color:#5369a8;
-
-    margin:15px;
-
-}
-
-
-.resultado{
-
-    text-align:center;
-
-    padding:20px;
-
-    border-radius:18px;
-
-}
-
-
-.resultado.estable{
-
-    background:#e4f4ea;
-
-}
-
-
-.resultado.variable{
-
-    background:#f5f0d9;
-
-}
-
-
-.resultado.bajo{
-
-    background:#f9e4e2;
-
-}
-
-
-.porcentaje{
-
-    font-size:38px;
-
-    font-weight:bold;
-
-    margin:15px;
-
-    color:#5369a8;
-
-}
-
-
-/* =====================================================
-   PERFIL
-===================================================== */
-
-.perfil{
-
-    text-align:center;
-
-}
-
-
-.perfil label{
-
-    display:block;
-
-    text-align:left;
-
-    margin-top:10px;
-
-}
-
-
-.perfil small{
-
-    display:block;
-
-    text-align:left;
-
-    color:#687785;
-
-    margin-bottom:10px;
-
-}
-
-
-.profile-photo{
-
-    width:110px;
-
-    height:110px;
-
-    border-radius:50%;
-
-    background:#e5efff;
-
+/* PORTADA */
+.hero{
+    min-height:470px;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
     display:flex;
-
-    align-items:center;
-
     justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
 
-    margin:10px auto 20px;
-
+.hero h2{
     font-size:55px;
-
-    overflow:hidden;
-
-    border:4px solid #ffffff;
-
-    box-shadow:
-        0 3px 10px rgba(0,0,0,.15);
-
+    color:#f4c95d;
+    text-shadow:2px 2px 5px #000;
 }
 
-
-.profile-photo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
+.hero h3{
+    font-size:28px;
+    margin:10px;
 }
 
-
-/* =====================================================
-   ALERTA
-===================================================== */
-
-.alert{
-
-    padding:15px;
-
-    border-radius:12px;
-
-    background:#eef4ff;
-
-    margin:10px 0;
-
-    border-left:5px solid #7b8fd8;
-
-    color:#405467;
-
+.hero p{
+    font-size:18px;
+    margin:15px;
 }
 
+.boton{
+    display:inline-block;
+    background:#e58b22;
+    color:white;
+    padding:13px 25px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:8px;
+}
 
-/* =====================================================
-   NOTIFICACIÓN
-===================================================== */
+.boton:hover{
+    background:#f4c95d;
+    color:#123d22;
+}
 
-#notificacionViva{
+/* SECCIONES */
+section{
+    padding:55px 7%;
+}
 
-    position:fixed;
+.titulo{
+    text-align:center;
+    color:#174d2a;
+    margin-bottom:30px;
+    font-size:32px;
+}
 
-    top:20px;
+/* MENU */
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
 
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:calc(100% - 30px);
-
-    max-width:500px;
-
+.plato{
     background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+}
 
-    border-radius:22px;
+.plato:hover{
+    transform:translateY(-7px);
+}
 
+.plato img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.plato-info{
+    padding:18px;
+    text-align:center;
+}
+
+.plato h3{
+    color:#174d2a;
+    margin-bottom:8px;
+}
+
+.precio{
+    color:#d46a13;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px;
+}
+
+/* SERVICIOS */
+.servicios{
+    background:#174d2a;
+    color:white;
+}
+
+.servicios .titulo{
+    color:#f4c95d;
+}
+
+.servicio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.servicio{
+    background:#245d35;
     padding:25px;
-
+    border-radius:15px;
     text-align:center;
-
-    box-shadow:
-        0 8px 30px rgba(45,62,90,.30);
-
-    border:4px solid #6685d6;
-
-    z-index:9999;
-
-    animation:
-        entradaNotificacion .3s ease;
-
 }
 
-
-@keyframes entradaNotificacion{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateX(-50%)
-            translateY(-30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateX(-50%)
-            translateY(0);
-
-    }
-
-}
-
-
-/* =====================================================
-   AGENDA
-===================================================== */
-
-.agenda-titulo{
-
-    text-align:center;
-
-    font-size:22px;
-
+.servicio .icono{
+    font-size:40px;
     margin-bottom:10px;
-
-    color:#5369a8;
-
 }
 
-
-.agenda-pendiente{
-
-    border-left:6px solid #6685d6;
-
-    background:#f1f5fc;
-
+/* GALERIA */
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
 }
 
-
-.agenda-realizada{
-
-    border-left:6px solid #6dbb8a;
-
-    background:#eef8f1;
-
-    opacity:.9;
-
+.galeria img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:12px;
 }
 
-
-/* =====================================================
-   PIE DE PÁGINA
-===================================================== */
-
-footer{
-
+/* UBICACION */
+.ubicacion{
     text-align:center;
-
-    padding:25px;
-
-    color:#607080;
-
+    background:#eee4c9;
 }
 
+.mapa{
+    margin:25px auto;
+    max-width:800px;
+    padding:35px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 5px 15px #bbb;
+}
 
-/* =====================================================
-   CELULAR
-===================================================== */
+/* CONTACTO */
+.contacto{
+    background:#123d22;
+    color:white;
+    text-align:center;
+}
 
-@media(max-width:600px){
+.contacto .titulo{
+    color:#f4c95d;
+}
 
-    header h1{
+.contacto p{
+    margin:12px;
+}
 
+/* PIE */
+footer{
+    background:#092415;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.redes a{
+    color:#f4c95d;
+    text-decoration:none;
+    margin:10px;
+}
+
+/* RESPONSIVE CELULAR */
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav{
+        text-align:center;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:5px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:430px;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+
+    .hero h3{
         font-size:22px;
-
     }
 
-
-    .logo{
-
-        width:55px;
-
-        height:55px;
-
+    section{
+        padding:40px 5%;
     }
 
-
-    .perfil-header{
-
-        padding:6px;
-
+    .titulo{
+        font-size:27px;
     }
-
-
-    .perfil-header-nombre{
-
-        display:none;
-
-    }
-
-
-    .menu{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .menu button{
-
-        min-height:110px;
-
-    }
-
-
-    .imagenes-memoria{
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-    }
-
-
-    .imagen-memoria{
-
-        min-height:90px;
-
-        font-size:35px;
-
-    }
-
-
-    #notificacionViva{
-
-        top:10px;
-
-        width:calc(100% - 20px);
-
-        padding:20px;
-
-    }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     AUDIO PERSONALIZADO
-===================================================== -->
-
-<audio
-    id="audioAviso"
-    src="recordatorio.mp3"
-    preload="auto">
-</audio>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
+<!-- ENCABEZADO -->
 <header>
 
-    <div class="logo">
-        🧠
-    </div>
+<div class="logo">
 
+<!-- CAMBIA logo.jpg POR TU LOGOTIPO -->
+<img src="imagen.logotipo.jpeg" alt="Logo MariAle">
 
-    <div>
+<div>
+<h1>MariAle</h1>
+<span>Sabor Viacheño</span>
+</div>
 
-        <h1>
-            Viva Memoria
-        </h1>
+</div>
 
-        <p>
-            Tu memoria, siempre contigo 💙
-        </p>
-
-    </div>
-
-
-    <div
-        class="perfil-header"
-        onclick="mostrarPerfil()"
-        title="Abrir mi perfil">
-
-        <div
-            class="perfil-header-icon"
-            id="fotoHeader">
-
-            👤
-
-        </div>
-
-
-        <div
-            class="perfil-header-nombre"
-            id="nombreHeader">
-
-            Mi perfil
-
-        </div>
-
-    </div>
+<nav>
+<a href="#inicio">INICIO</a>
+<a href="#nosotros">NOSOTROS</a>
+<a href="#menu">MENÚ</a>
+<a href="#galeria">GALERÍA</a>
+<a href="#servicios">SERVICIOS</a>
+<a href="#ubicacion">UBICACIÓN</a>
+<a href="#contacto">CONTACTO</a>
+</nav>
 
 </header>
 
 
-<div class="container">
+<!-- PORTADA -->
+<section class="hero" id="inicio">
 
+<div>
 
-<!-- =====================================================
-     BIENVENIDA
-===================================================== -->
+<h2>MariAle</h2>
 
-<div class="welcome">
+<h3>SABOR VIACHEÑO</h3>
 
-    <h2 id="saludoUsuario">
-        ¡Bienvenido/a! 👋
-    </h2>
+<p>RESTAURANTE</p>
 
-    <p>
-        Selecciona una opción para comenzar.
-    </p>
+<p>
+Disfruta de los mejores platos preparados
+con ingredientes frescos y de calidad.
+</p>
 
-</div>
+<a class="boton" href="#menu">VER MENÚ</a>
 
-
-<!-- =====================================================
-     MENU
-===================================================== -->
-
-<div class="menu">
-
-    <button onclick="mostrarMemoria()">
-
-        🧠
-
-        <span>
-            Ejercicio de memoria
-        </span>
-
-    </button>
-
-
-    <button onclick="mostrarAgenda()">
-
-        📅
-
-        <span>
-            Agenda y recordatorios
-        </span>
-
-    </button>
-
-
-    <button onclick="mostrarFamilia()">
-
-        👨‍👩‍👧
-
-        <span>
-            Mi familia
-        </span>
-
-    </button>
-
-
-    <button onclick="mostrarPerfil()">
-
-        👤
-
-        <span>
-            Mi perfil
-        </span>
-
-    </button>
-
-
-    <button onclick="mostrarSeguridad()">
-
-        🛡️
-
-        <span>
-            Seguridad
-        </span>
-
-    </button>
+<a class="boton" href="#contacto">RESERVAR</a>
 
 </div>
 
+</section>
 
-<div id="contenido">
 
-    <div class="card">
+<!-- NOSOTROS -->
+<section id="nosotros">
 
-        <h2>
-            💙 Viva Memoria
-        </h2>
+<h2 class="titulo">🍽️ Sobre Nosotros</h2>
 
-        <p>
-            Aplicación de apoyo para ejercicios de memoria,
-            recordatorios y organización personal.
-        </p>
+<p style="text-align:center;max-width:800px;margin:auto;line-height:1.8;">
 
+<strong>MariAle Sabor Viacheño</strong> es un restaurante
+dedicado a ofrecer deliciosos platos preparados con
+ingredientes frescos y de excelente calidad.
+
+Nuestro objetivo es brindar a nuestros clientes
+una experiencia agradable, con buena atención,
+comida deliciosa y un ambiente familiar.
+
+</p>
+
+</section>
+
+<!-- MENU -->
+<section id="menu">
+
+    <h2 class="titulo">🍴 Nuestro Menú</h2>
+    
+    <div class="menu">
+    
+        <!-- COMIDA 1 -->
+        <div class="plato">
+            <img src="imagen.piquemacho.jpeg" alt="Pique Macho">
+    
+            <div class="plato-info">
+                <h3>Pique Macho</h3>
+                <div class="precio">Bs. 100</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 2 -->
+        <div class="plato">
+            <img src="imagen.trucha.jpeg" alt="Trucha a la Plancha">
+    
+            <div class="plato-info">
+                <h3>Trucha a la Plancha</h3>
+                <div class="precio">Bs. 90</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 3 -->
+        <div class="plato">
+            <img src="imagen.parrillapersonal.jpeg" alt="Parrilla Personal">
+    
+            <div class="plato-info">
+                <h3>Parrilla Personal</h3>
+                <div class="precio">Bs. 110</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 4 -->
+        <div class="plato">
+            <img src="imagen.parrilla bi-persinal.jpeg" alt="Parrilla Bi-Personal">
+    
+            <div class="plato-info">
+                <h3>Parrilla Bi-Personal</h3>
+                <div class="precio">Bs. 220</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 5 -->
+        <div class="plato">
+            <img src="imagen.planchita.jpeg" alt="Planchita">
+    
+            <div class="plato-info">
+                <h3>Planchita</h3>
+                <div class="precio">Bs. 110</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 6 -->
+        <div class="plato">
+            <img src="imagen.escabeche.jpeg" alt="Escabeche Mixto">
+    
+            <div class="plato-info">
+                <h3>Escabeche Mixto</h3>
+                <div class="precio">Bs. 90</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 7 -->
+        <div class="plato">
+            <img src="imagen.lechon.jpeg" alt="Lechon">
+    
+            <div class="plato-info">
+                <h3>Lechon</h3>
+                <div class="precio">Bs. 90</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+    
+    </section>
+
+    <!-- BEBIDAS -->
+<section id="bebidas">
+
+    <h2 class="titulo">🥤 Nuestras Bebidas</h2>
+    
+    <div class="menu">
+    
+        <!-- BEBIDA 1 -->
+        <div class="plato">
+            <img src="imagen.cocacola.jpeg" alt="Coca Cola">
+    
+            <div class="plato-info">
+                <h3>Coca Cola</h3>
+                <div class="precio">Bs. 15</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+        <!-- BEBIDA 2 -->
+        <div class="plato">
+            <img src="imagen.huari.jpeg" alt="Cerveza Huari">
+    
+            <div class="plato-info">
+                <h3>Cerveza Huari</h3>
+                <div class="precio">Bs. 25</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+        <!-- BEBIDA 3 -->
+        <div class="plato">
+            <img src="imagen.frutall.jpeg" alt="Frut-all">
+    
+            <div class="plato-info">
+                <h3>Frut-all</h3>
+                <div class="precio">Bs. 18</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+        <!-- BEBIDA 4 -->
+        <div class="plato">
+            <img src="imagen.vino.jpeg" alt="Vino">
+    
+            <div class="plato-info">
+                <h3>Vino</h3>
+                <div class="precio">Bs. 60</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
     </div>
+    
+    </section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+
+<h2 class="titulo">⭐ Nuestros Servicios</h2>
+
+<div class="servicio-grid">
+
+<div class="servicio">
+
+<div class="icono">📅</div>
+
+<h3>Reservas</h3>
+
+<p>Reserva tu mesa fácilmente.</p>
+
+</div>
+
+
+<div class="servicio">
+
+<div class="icono">🛵</div>
+
+<h3>Pedidos en Línea</h3>
+
+<p>Realiza tus pedidos desde cualquier lugar.</p>
+
+</div>
+
+
+<div class="servicio">
+
+<div class="icono">🎉</div>
+
+<h3>Eventos</h3>
+
+<p>Atención para cumpleaños y eventos especiales.</p>
+
+</div>
+
+
+<div class="servicio">
+
+<div class="icono">🍴</div>
+
+<h3>Atención Familiar</h3>
+
+<p>Un espacio agradable para compartir.</p>
 
 </div>
 
 </div>
 
+</section>
 
+
+<!-- GALERIA -->
+<section id="galeria">
+
+<h2 class="titulo">📸 Galería</h2>
+
+<div class="galeria">
+
+<img src="imagen.galeria1.jpeg">
+
+<img src="imagen.galeria2.jpeg">
+
+<img src="imagen.galeria3.jpeg">
+
+<img src="imagen.galeria4.jpeg">
+
+</div>
+
+</section>
+
+
+<!-- UBICACION -->
+<section class="ubicacion" id="ubicacion">
+
+<h2 class="titulo">📍 Nuestra Ubicación</h2>
+
+<div class="mapa">
+
+<h3>📌 Restaurante MariAle</h3>
+
+<p>Viacha, Bolivia</p>
+
+<p>Visítanos y disfruta de nuestros deliciosos platos.</p>
+
+<br>
+
+<a class="boton"
+href="https://www.google.com/maps"
+target="_blank">
+
+ABRIR GOOGLE MAPS
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+
+<h2 class="titulo">📞 Contáctanos</h2>
+
+<p>📱 WhatsApp: 69855157</p>
+
+<p>📧 Email: mariale@gmail.com</p>
+
+<p>📍 Ubicación: Bolivia</p>
+
+<br>
+
+<a class="boton"
+href="https://wa.me/59169855157"
+target="_blank">
+
+💬 PEDIR POR WHATSAPP
+
+</a>
+
+<a class="boton"
+href="tel:+59169855157">
+
+📞 LLAMAR
+
+</a>
+
+</section>
+
+
+<!-- PIE -->
 <footer>
 
-    Viva Memoria © 2026
+<h3>MariAle - Sabor Viacheño</h3>
+
+<p>© 2026 Todos los derechos reservados.</p>
+
+<br>
+
+<div class="redes">
+
+<a href="#">TikTok</a>
+
+<a href="#">WhatsApp</a>
+
+</div>
 
 </footer>
 
 
-<script>
-
-/* =====================================================
-   FUNCIONES GENERALES
-===================================================== */
-
-function guardar(nombre,datos){
-
-    localStorage.setItem(
-        nombre,
-        JSON.stringify(datos)
-    );
-
-}
-
-
-function cargar(nombre,defecto=[]){
-
-    const datos =
-        localStorage.getItem(nombre);
-
-    if(datos){
-
-        try{
-
-            return JSON.parse(datos);
-
-        }catch(error){
-
-            return defecto;
-
-        }
-
-    }
-
-    return defecto;
-
-}
-
-
-/* =====================================================
-   ACTUALIZAR PERFIL EN HEADER
-===================================================== */
-
-function actualizarPerfilHeader(){
-
-    const perfil =
-        cargar("perfil",{
-
-            nombre:"",
-            edad:"",
-            informacion:"",
-            foto:""
-
-        });
-
-
-    const nombreHeader =
-        document.getElementById(
-            "nombreHeader"
-        );
-
-
-    const fotoHeader =
-        document.getElementById(
-            "fotoHeader"
-        );
-
-
-    if(fotoHeader){
-
-        if(perfil.foto){
-
-            fotoHeader.innerHTML=`
-
-                <img
-                    src="${perfil.foto}"
-                    alt="Foto de perfil">
-
-            `;
-
-        }else{
-
-            fotoHeader.innerHTML="👤";
-
-        }
-
-    }
-
-
-    const saludo =
-        document.getElementById(
-            "saludoUsuario"
-        );
-
-
-    if(perfil.nombre){
-
-        nombreHeader.textContent =
-            perfil.nombre;
-
-        saludo.innerHTML =
-            "¡Bienvenido/a, " +
-            perfil.nombre +
-            "! 👋";
-
-    }else{
-
-        nombreHeader.textContent =
-            "Mi perfil";
-
-        saludo.innerHTML =
-            "¡Bienvenido/a! 👋";
-
-    }
-
-}
-
-
-/* =====================================================
-   EJERCICIO DE MEMORIA
-===================================================== */
-
-const bancoImagenes=[
-
-    {emoji:"🍎",nombre:"Manzana"},
-    {emoji:"🚗",nombre:"Auto"},
-    {emoji:"🐶",nombre:"Perro"},
-    {emoji:"🌸",nombre:"Flor"},
-    {emoji:"🏠",nombre:"Casa"},
-    {emoji:"📱",nombre:"Teléfono"},
-    {emoji:"🍌",nombre:"Banana"},
-    {emoji:"⚽",nombre:"Pelota"},
-    {emoji:"🐱",nombre:"Gato"},
-    {emoji:"☀️",nombre:"Sol"},
-    {emoji:"🚲",nombre:"Bicicleta"},
-    {emoji:"🍓",nombre:"Frutilla"},
-    {emoji:"🐟",nombre:"Pez"},
-    {emoji:"🌳",nombre:"Árbol"},
-    {emoji:"🎸",nombre:"Guitarra"},
-    {emoji:"☕",nombre:"Taza"}
-
-];
-
-
-let imagenesParaRecordar=[];
-
-let opcionesRecuerdo=[];
-
-let tiempoObservacion=10;
-
-let temporizador=null;
-
-
-/* =====================================================
-   MOSTRAR MEMORIA
-===================================================== */
-
-function mostrarMemoria(){
-
-    document.getElementById("contenido").innerHTML=`
-
-    <div class="card">
-
-        <h2>
-            🧠 Ejercicio de memoria
-        </h2>
-
-
-        <div class="instruccion">
-
-            <strong>
-                ¿Cómo funciona?
-            </strong>
-
-            <p>
-
-                Primero observarás algunas imágenes.
-                Trata de recordar cuáles aparecen.
-                Después desaparecerán y tendrás que
-                seleccionar las 3 que recuerdes.
-
-            </p>
-
-        </div>
-
-
-        <button
-            class="btn"
-            onclick="comenzarEjercicio()">
-
-            ▶️ Comenzar ejercicio
-
-        </button>
-
-
-        <br><br>
-
-
-        <button
-            class="btn"
-            onclick="mostrarHistorialMemoria()">
-
-            📊 Ver historial
-
-        </button>
-
-
-        <div id="memoriaArea"></div>
-
-    </div>
-
-    `;
-
-}
-
-
-/* =====================================================
-   COMENZAR EJERCICIO
-===================================================== */
-
-function comenzarEjercicio(){
-
-    tiempoObservacion=10;
-
-
-    imagenesParaRecordar =
-        [...bancoImagenes]
-        .sort(()=>Math.random()-0.5)
-        .slice(0,3);
-
-
-    const otras =
-        bancoImagenes
-        .filter(img =>
-            !imagenesParaRecordar.includes(img)
-        )
-        .sort(()=>Math.random()-0.5)
-        .slice(0,3);
-
-
-    opcionesRecuerdo=[
-
-        ...imagenesParaRecordar,
-
-        ...otras
-
-    ].sort(()=>Math.random()-0.5);
-
-
-    mostrarImagenesObservacion();
-
-}
-
-
-/* =====================================================
-   FASE 1
-===================================================== */
-
-function mostrarImagenesObservacion(){
-
-    const area =
-        document.getElementById(
-            "memoriaArea"
-        );
-
-
-    let html=`
-
-        <div class="contador">
-
-            ⏱️
-
-            <span id="tiempo">
-                ${tiempoObservacion}
-            </span>
-
-            segundos
-
-        </div>
-
-
-        <div class="instruccion">
-
-            👀
-
-            <strong>
-                Observa y recuerda.
-            </strong>
-
-            <br>
-
-            Trata de recordar las 3 imágenes.
-
-        </div>
-
-
-        <div class="imagenes-memoria">
-
-    `;
-
-
-    imagenesParaRecordar.forEach(img=>{
-
-        html+=`
-
-            <div class="imagen-memoria">
-
-                <div>
-                    ${img.emoji}
-                </div>
-
-                <span>
-                    ${img.nombre}
-                </span>
-
-            </div>
-
-        `;
-
-    });
-
-
-    html+=`</div>`;
-
-
-    area.innerHTML=html;
-
-
-    temporizador=setInterval(()=>{
-
-        tiempoObservacion--;
-
-
-        const contador =
-            document.getElementById(
-                "tiempo"
-            );
-
-
-        if(contador){
-
-            contador.textContent =
-                tiempoObservacion;
-
-        }
-
-
-        if(tiempoObservacion<=0){
-
-            clearInterval(
-                temporizador
-            );
-
-            mostrarRecuerdo();
-
-        }
-
-    },1000);
-
-}
-
-
-/* =====================================================
-   FASE 2
-===================================================== */
-
-function mostrarRecuerdo(){
-
-    const area =
-        document.getElementById(
-            "memoriaArea"
-        );
-
-
-    let html=`
-
-        <div class="instruccion">
-
-            🧠
-
-            <strong>
-                Ahora recuerda.
-            </strong>
-
-            <br>
-
-            Selecciona solamente las imágenes
-            que viste anteriormente.
-
-        </div>
-
-
-        <div class="imagenes-memoria">
-
-    `;
-
-
-    opcionesRecuerdo.forEach((img,index)=>{
-
-        html+=`
-
-            <button
-                class="imagen-memoria"
-                id="recuerdo-${index}"
-                onclick="seleccionarImagen(${index})">
-
-                <div>
-                    ${img.emoji}
-                </div>
-
-                <span>
-                    ${img.nombre}
-                </span>
-
-            </button>
-
-        `;
-
-    });
-
-
-    html+=`
-
-        </div>
-
-
-        <button
-            class="btn btn-green"
-            onclick="comprobarMemoria()">
-
-            ✅ Comprobar respuestas
-
-        </button>
-
-    `;
-
-
-    area.innerHTML=html;
-
-}
-
-
-/* =====================================================
-   SELECCIONAR IMAGEN
-===================================================== */
-
-function seleccionarImagen(index){
-
-    const boton =
-        document.getElementById(
-            "recuerdo-"+index
-        );
-
-
-    boton.classList.toggle(
-        "seleccionada"
-    );
-
-}
-
-
-/* =====================================================
-   COMPROBAR MEMORIA
-===================================================== */
-
-function comprobarMemoria(){
-
-    const botones =
-        document.querySelectorAll(
-            ".imagen-memoria.seleccionada"
-        );
-
-
-    let seleccionadas=[];
-
-
-    botones.forEach(boton=>{
-
-        const index =
-            parseInt(
-                boton.id.replace(
-                    "recuerdo-",""
-                )
-            );
-
-
-        seleccionadas.push(
-            opcionesRecuerdo[index]
-        );
-
-    });
-
-
-    let aciertos=0;
-
-
-    seleccionadas.forEach(img=>{
-
-        if(
-            imagenesParaRecordar.includes(img)
-        ){
-
-            aciertos++;
-
-        }
-
-    });
-
-
-    const errores =
-        seleccionadas.filter(
-            img =>
-                !imagenesParaRecordar.includes(img)
-        ).length;
-
-
-    const olvidadas =
-        imagenesParaRecordar.filter(
-            img =>
-                !seleccionadas.includes(img)
-        ).length;
-
-
-    const porcentaje =
-        Math.round(
-            (
-                aciertos /
-                imagenesParaRecordar.length
-            ) * 100
-        );
-
-
-    guardarResultado(
-        aciertos,
-        errores,
-        olvidadas,
-        porcentaje
-    );
-
-}
-
-
-/* =====================================================
-   GUARDAR RESULTADO
-===================================================== */
-
-function guardarResultado(
-    aciertos,
-    errores,
-    olvidadas,
-    porcentaje
-){
-
-    const historial =
-        cargar(
-            "historialMemoria",
-            []
-        );
-
-
-    const resultado={
-
-        fecha:
-            new Date().toLocaleString(),
-
-        aciertos:
-            aciertos,
-
-        errores:
-            errores,
-
-        olvidadas:
-            olvidadas,
-
-        porcentaje:
-            porcentaje
-
-    };
-
-
-    historial.push(
-        resultado
-    );
-
-
-    guardar(
-        "historialMemoria",
-        historial
-    );
-
-
-    mostrarResultado(
-        resultado
-    );
-
-}
-
-
-/* =====================================================
-   MOSTRAR RESULTADO
-===================================================== */
-
-function mostrarResultado(resultado){
-
-    let clasificacion="estable";
-
-    let titulo="🟢 Buen rendimiento";
-
-    let mensaje =
-        "¡Muy bien! Continúa ejercitando tu memoria.";
-
-
-    if(resultado.porcentaje<50){
-
-        clasificacion="bajo";
-
-        titulo =
-            "🟡 Puedes seguir practicando";
-
-        mensaje =
-            "No te preocupes. Puedes intentarlo nuevamente.";
-
-    }
-
-    else if(resultado.porcentaje<75){
-
-        clasificacion="variable";
-
-        titulo =
-            "🟢 Buen esfuerzo";
-
-        mensaje =
-            "Continúa practicando para fortalecer tu memoria.";
-
-    }
-
-
-    document.getElementById(
-        "memoriaArea"
-    ).innerHTML=`
-
-        <div
-            class="resultado ${clasificacion}">
-
-            <h2>
-                ${titulo}
-            </h2>
-
-
-            <div class="porcentaje">
-
-                ${resultado.porcentaje}%
-
-            </div>
-
-
-            <p>
-                ${mensaje}
-            </p>
-
-
-            <br>
-
-
-            <p>
-
-                ✅ Imágenes recordadas:
-
-                <strong>
-                    ${resultado.aciertos}
-                </strong>
-
-            </p>
-
-
-            <p>
-
-                ❌ Selecciones incorrectas:
-
-                <strong>
-                    ${resultado.errores}
-                </strong>
-
-            </p>
-
-
-            <p>
-
-                🧠 Imágenes olvidadas:
-
-                <strong>
-                    ${resultado.olvidadas}
-                </strong>
-
-            </p>
-
-
-            <br>
-
-
-            <p>
-
-                Este ejercicio es únicamente de apoyo
-                y no constituye un diagnóstico médico.
-
-            </p>
-
-
-            <br>
-
-
-            <button
-                class="btn"
-                onclick="comenzarEjercicio()">
-
-                🔄 Nuevo ejercicio
-
-            </button>
-
-
-            <button
-                class="btn btn-gray"
-                onclick="mostrarHistorialMemoria()">
-
-                📊 Historial
-
-            </button>
-
-        </div>
-
-    `;
-
-}
-
-
-/* =====================================================
-   HISTORIAL
-===================================================== */
-
-function mostrarHistorialMemoria(){
-
-    const historial =
-        cargar(
-            "historialMemoria",
-            []
-        );
-
-
-    let html=`
-
-        <div class="card">
-
-            <h2>
-                📊 Historial de memoria
-            </h2>
-
-    `;
-
-
-    if(historial.length===0){
-
-        html+=`
-
-            <p>
-                Todavía no hay ejercicios registrados.
-            </p>
-
-        `;
-
-    }
-
-    else{
-
-        historial
-        .slice()
-        .reverse()
-        .forEach((r,index)=>{
-
-            html+=`
-
-                <div class="item">
-
-                    <strong>
-                        Ejercicio
-                        ${historial.length-index}
-                    </strong>
-
-                    <p>
-                        📅 ${r.fecha}
-                    </p>
-
-                    <p>
-
-                        🧠 Resultado:
-
-                        <strong>
-                            ${r.porcentaje}%
-                        </strong>
-
-                    </p>
-
-                    <p>
-                        ✅ Aciertos:
-                        ${r.aciertos}
-                    </p>
-
-                    <p>
-                        ❌ Errores:
-                        ${r.errores}
-                    </p>
-
-                </div>
-
-            `;
-
-        });
-
-
-        html+=`
-
-            <button
-                class="btn btn-danger"
-                onclick="borrarHistorialMemoria()">
-
-                🗑️ Borrar historial
-
-            </button>
-
-        `;
-
-    }
-
-
-    html+=`
-
-        <br>
-
-
-        <button
-            class="btn"
-            onclick="mostrarMemoria()">
-
-            ⬅️ Volver
-
-        </button>
-
-
-        </div>
-
-    `;
-
-
-    document.getElementById(
-        "contenido"
-    ).innerHTML=html;
-
-}
-
-
-function borrarHistorialMemoria(){
-
-    if(confirm(
-        "¿Seguro que deseas borrar todo el historial?"
-    )){
-
-        localStorage.removeItem(
-            "historialMemoria"
-        );
-
-        mostrarHistorialMemoria();
-
-    }
-
-}
-
-
-/* =====================================================
-   AGENDA Y RECORDATORIOS
-===================================================== */
-
-let ultimoAviso = "";
-
-let audioActivado = false;
-
-
-/* =====================================================
-   ACTIVAR AUDIO
-===================================================== */
-
-function activarAudio(){
-
-    audioActivado = true;
-
-
-    const audio =
-        document.getElementById(
-            "audioAviso"
-        );
-
-
-    if(audio){
-
-        audio.muted = true;
-
-
-        audio.play()
-
-        .then(()=>{
-
-            audio.pause();
-
-            audio.currentTime=0;
-
-            audio.muted=false;
-
-        })
-
-        .catch(error=>{
-
-            console.log(
-                "El navegador todavía no permite activar el audio:",
-                error
-            );
-
-        });
-
-    }
-
-}
-
-
-/* =====================================================
-   REPRODUCIR AUDIO PERSONALIZADO
-===================================================== */
-
-function reproducirAviso(){
-
-    const audio =
-        document.getElementById(
-            "audioAviso"
-        );
-
-
-    if(!audio){
-
-        console.log(
-            "No se encontró el audio."
-        );
-
-        return;
-
-    }
-
-
-    audio.currentTime=0;
-
-    audio.muted=false;
-
-
-    audio.play()
-
-    .then(()=>{
-
-        console.log(
-            "Audio del recordatorio reproducido."
-        );
-
-
-        setTimeout(()=>{
-
-            audio.pause();
-
-            audio.currentTime=0;
-
-        },5000);
-
-    })
-
-    .catch(error=>{
-
-        console.log(
-            "No se pudo reproducir el audio:",
-            error
-        );
-
-    });
-
-}
-
-
-/* =====================================================
-   FECHA ACTUAL
-===================================================== */
-
-function obtenerFechaActual(){
-
-    const ahora =
-        new Date();
-
-
-    return ahora.getFullYear() +
-
-        "-" +
-
-        String(
-            ahora.getMonth()+1
-        ).padStart(2,"0") +
-
-        "-" +
-
-        String(
-            ahora.getDate()
-        ).padStart(2,"0");
-
-}
-
-
-/* =====================================================
-   MOSTRAR AGENDA
-===================================================== */
-
-function mostrarAgenda(){
-
-    activarAudio();
-
-
-    const agenda =
-        cargar(
-            "agenda",
-            []
-        );
-
-
-    const fechaActual =
-        obtenerFechaActual();
-
-
-    let html=`
-
-    <div class="card">
-
-        <h2>
-            📅 Agenda y recordatorios
-        </h2>
-
-
-        <div class="instruccion">
-
-            <strong>
-                🔔 Organiza tus actividades
-            </strong>
-
-            <p>
-
-                Registra una actividad con fecha y hora.
-                Cuando llegue el momento, Viva Memoria
-                mostrará automáticamente un aviso
-                y reproducirá tu audio personalizado.
-
-            </p>
-
-        </div>
-
-
-        <label>
-            📅 Fecha
-        </label>
-
-
-        <input
-            type="date"
-            id="agendaFecha"
-            value="${fechaActual}">
-
-
-        <label>
-            ⏰ Hora
-        </label>
-
-
-        <input
-            type="time"
-            id="agendaHora">
-
-
-        <label>
-            📝 Actividad o recordatorio
-        </label>
-
-
-        <input
-            type="text"
-            id="agendaActividad"
-            placeholder="Ejemplo: Tomar agua">
-
-
-        <button
-            class="btn"
-            onclick="agregarAgenda()">
-
-            ➕ Guardar recordatorio
-
-        </button>
-
-
-        <button
-    class="btn btn-gray"
-    onclick="probarNotificacion()"
-    style="display:none;">
-
-    🔔 Probar aviso y audio
-
-          </button>
-
-
-        <div id="listaAgenda">
-
-    `;
-
-
-    if(agenda.length===0){
-
-        html+=`
-
-            <div class="item">
-
-                <p>
-                    No hay actividades programadas.
-                </p>
-
-            </div>
-
-        `;
-
-    }
-
-    else{
-
-        const agendaOrdenada =
-            [...agenda].sort((a,b)=>{
-
-                const fechaA =
-                    new Date(
-                        a.fecha +
-                        "T" +
-                        a.hora
-                    );
-
-
-                const fechaB =
-                    new Date(
-                        b.fecha +
-                        "T" +
-                        b.hora
-                    );
-
-
-                return fechaA-fechaB;
-
-            });
-
-
-        agendaOrdenada.forEach(
-            actividad=>{
-
-            const indice =
-                agenda.indexOf(
-                    actividad
-                );
-
-
-            const realizada =
-                actividad.realizada===true;
-
-
-            html+=`
-
-            <div
-                class="item ${
-                    realizada
-                    ? "agenda-realizada"
-                    : "agenda-pendiente"
-                }">
-
-
-                <strong>
-
-                    📅
-
-                    ${
-                        formatearFecha(
-                            actividad.fecha
-                        )
-                    }
-
-                </strong>
-
-
-                <p>
-                    ⏰ ${actividad.hora}
-                </p>
-
-
-                <p>
-                    📝 ${actividad.actividad}
-                </p>
-
-
-                <p>
-
-                    ${
-                        realizada
-                        ? "✅ Actividad realizada"
-                        : "🔵 Actividad pendiente"
-                    }
-
-                </p>
-
-
-                <button
-
-                    class="btn ${
-                        realizada
-                        ? "btn-gray"
-                        : "btn-green"
-                    }"
-
-                    onclick="
-                        cambiarEstadoAgenda(${indice})
-                    ">
-
-                    ${
-                        realizada
-                        ? "↩️ Pendiente"
-                        : "✅ Realizada"
-                    }
-
-                </button>
-
-
-                <button
-
-                    class="btn btn-danger"
-
-                    onclick="
-                        eliminarAgenda(${indice})
-                    ">
-
-                    🗑️ Eliminar
-
-                </button>
-
-
-            </div>
-
-            `;
-
-        });
-
-    }
-
-
-    html+=`
-
-        </div>
-
-    </div>
-
-    `;
-
-
-    document.getElementById(
-        "contenido"
-    ).innerHTML=html;
-
-}
-
-
-/* =====================================================
-   FORMATEAR FECHA
-===================================================== */
-
-function formatearFecha(fecha){
-
-    const partes =
-        fecha.split("-");
-
-
-    if(partes.length!==3){
-
-        return fecha;
-
-    }
-
-
-    return partes[2] +
-        "/" +
-        partes[1] +
-        "/" +
-        partes[0];
-
-}
-
-
-/* =====================================================
-   AGREGAR AGENDA
-===================================================== */
-
-function agregarAgenda(){
-
-    activarAudio();
-
-
-    const fecha =
-        document.getElementById(
-            "agendaFecha"
-        ).value;
-
-
-    const hora =
-        document.getElementById(
-            "agendaHora"
-        ).value;
-
-
-    const actividad =
-        document.getElementById(
-            "agendaActividad"
-        ).value.trim();
-
-
-    if(!fecha || !hora || !actividad){
-
-        alert(
-            "Completa la fecha, la hora y la actividad."
-        );
-
-        return;
-
-    }
-
-
-    const agenda =
-        cargar(
-            "agenda",
-            []
-        );
-
-
-    agenda.push({
-
-        fecha:fecha,
-
-        hora:hora,
-
-        actividad:actividad,
-
-        realizada:false,
-
-        ultimoAviso:""
-
-    });
-
-
-    guardar(
-        "agenda",
-        agenda
-    );
-
-
-    alert(
-        "✅ Recordatorio guardado correctamente."
-    );
-
-
-    mostrarAgenda();
-
-}
-
-
-/* =====================================================
-   CAMBIAR ESTADO
-===================================================== */
-
-function cambiarEstadoAgenda(index){
-
-    const agenda =
-        cargar(
-            "agenda",
-            []
-        );
-
-
-    if(!agenda[index]){
-
-        return;
-
-    }
-
-
-    agenda[index].realizada =
-        !agenda[index].realizada;
-
-
-    guardar(
-        "agenda",
-        agenda
-    );
-
-
-    mostrarAgenda();
-
-}
-
-
-/* =====================================================
-   ELIMINAR ACTIVIDAD
-===================================================== */
-
-function eliminarAgenda(index){
-
-    const agenda =
-        cargar(
-            "agenda",
-            []
-        );
-
-
-    if(!agenda[index]){
-
-        return;
-
-    }
-
-
-    if(confirm(
-        "¿Deseas eliminar este recordatorio?"
-    )){
-
-        agenda.splice(
-            index,
-            1
-        );
-
-
-        guardar(
-            "agenda",
-            agenda
-        );
-
-
-        mostrarAgenda();
-
-    }
-
-}
-
-
-/* =====================================================
-   NOTIFICACIÓN
-===================================================== */
-
-function mostrarNotificacion(
-    titulo,
-    mensaje
-){
-
-    const anterior =
-        document.getElementById(
-            "notificacionViva"
-        );
-
-
-    if(anterior){
-
-        anterior.remove();
-
-    }
-
-
-    const notificacion =
-        document.createElement(
-            "div"
-        );
-
-
-    notificacion.id =
-        "notificacionViva";
-
-
-    notificacion.innerHTML=`
-
-        <div>
-
-            <div style="
-                font-size:42px;
-                margin-bottom:8px;
-            ">
-
-                🔔
-
-            </div>
-
-
-            <h2 style="
-                margin-bottom:8px;
-                color:#5369a8;
-            ">
-
-                ${titulo}
-
-            </h2>
-
-
-            <p style="
-                font-size:17px;
-                line-height:1.5;
-            ">
-
-                ${mensaje}
-
-            </p>
-
-
-            <button
-
-                class="btn"
-
-                onclick="
-                    cerrarNotificacion()
-                "
-
-                style="
-                    margin-top:15px;
-                ">
-
-                ✅ Entendido
-
-            </button>
-
-        </div>
-
-    `;
-
-
-    document.body.appendChild(
-        notificacion
-    );
-
-
-    reproducirAviso();
-
-}
-
-
-/* =====================================================
-   CERRAR NOTIFICACIÓN
-===================================================== */
-
-function cerrarNotificacion(){
-
-    const notificacion =
-        document.getElementById(
-            "notificacionViva"
-        );
-
-
-    if(notificacion){
-
-        notificacion.remove();
-
-    }
-
-}
-
-
-/* =====================================================
-   PROBAR NOTIFICACIÓN
-===================================================== */
-
-function probarNotificacion(){
-
-    activarAudio();
-
-
-    mostrarNotificacion(
-
-        "Prueba de notificación",
-
-        "Este es el aviso de Viva Memoria. " +
-        "Tu audio personalizado también se está reproduciendo."
-
-    );
-
-}
-
-
-/* =====================================================
-   REVISAR AGENDA AUTOMÁTICAMENTE
-===================================================== */
-
-function revisarAgenda(){
-
-    const ahora = new Date();
-
-    const fechaActual =
-        ahora.getFullYear() +
-        "-" +
-        String(ahora.getMonth()+1).padStart(2,"0") +
-        "-" +
-        String(ahora.getDate()).padStart(2,"0");
-
-    const horaActual =
-        String(ahora.getHours()).padStart(2,"0") +
-        ":" +
-        String(ahora.getMinutes()).padStart(2,"0");
-
-    const agenda = cargar("agenda", []);
-
-    let cambios = false;
-
-    agenda.forEach(actividad => {
-
-        if(
-            actividad.fecha === fechaActual &&
-            actividad.hora === horaActual &&
-            actividad.realizada !== true &&
-            actividad.ultimoAviso !== fechaActual + "-" + horaActual
-        ){
-
-            actividad.ultimoAviso =
-                fechaActual + "-" + horaActual;
-
-            cambios = true;
-
-            mostrarNotificacion(
-
-                "¡Tienes un recordatorio! 🔔",
-
-                "Es hora de: " +
-                "<strong>" +
-                actividad.actividad +
-                "</strong>"
-
-            );
-
-        }
-
-    });
-
-    if(cambios){
-
-        guardar("agenda", agenda);
-
-    }
-
-}
-
-/* =====================================================
-   COMPROBACIÓN CADA 10 SEGUNDOS
-===================================================== */
-
-setInterval(
-
-    revisarAgenda,
-
-    10000
-
-);
-
-
-/* =====================================================
-   REVISAR AL ABRIR
-===================================================== */
-
-revisarAgenda();
-
-
-/* =====================================================
-   FAMILIA
-===================================================== */
-
-function mostrarFamilia(){
-
-    const familiares =
-        cargar(
-            "familia",
-            []
-        );
-
-
-    let html=`
-
-    <div class="card">
-
-        <h2>
-            👨‍👩‍👧 Mi familia
-        </h2>
-
-
-        <label>
-            Nombre
-        </label>
-
-
-        <input
-            id="nombreFamiliar"
-            placeholder="Nombre del familiar">
-
-
-        <label>
-            Teléfono
-        </label>
-
-
-        <input
-            id="telefonoFamiliar"
-            type="tel"
-            placeholder="Número de teléfono">
-
-
-        <button
-            class="btn"
-            onclick="agregarFamiliar()">
-
-            ➕ Agregar familiar
-
-        </button>
-
-    `;
-
-
-    if(familiares.length===0){
-
-        html+=`
-
-            <p>
-                No hay familiares registrados.
-            </p>
-
-        `;
-
-    }
-
-    else{
-
-        familiares.forEach(
-            (f,index)=>{
-
-            html+=`
-
-            <div class="item">
-
-                <strong>
-                    👤 ${f.nombre}
-                </strong>
-
-
-                <p>
-                    📞 ${f.telefono}
-                </p>
-
-
-                <a
-                    href="tel:${f.telefono}"
-                    class="btn btn-green">
-
-                    📞 Llamar
-
-                </a>
-
-
-                <button
-                    class="btn btn-danger"
-                    onclick="
-                        eliminarFamiliar(${index})
-                    ">
-
-                    Eliminar
-
-                </button>
-
-            </div>
-
-            `;
-
-        });
-
-    }
-
-
-    html+=`
-
-    </div>
-
-    `;
-
-
-    document.getElementById(
-        "contenido"
-    ).innerHTML=html;
-
-}
-
-
-function agregarFamiliar(){
-
-    const nombre =
-        document.getElementById(
-            "nombreFamiliar"
-        ).value;
-
-
-    const telefono =
-        document.getElementById(
-            "telefonoFamiliar"
-        ).value;
-
-
-    if(!nombre || !telefono){
-
-        alert(
-            "Completa los datos."
-        );
-
-        return;
-
-    }
-
-
-    const familiares =
-        cargar(
-            "familia",
-            []
-        );
-
-
-    familiares.push({
-
-        nombre:nombre,
-
-        telefono:telefono
-
-    });
-
-
-    guardar(
-        "familia",
-        familiares
-    );
-
-
-    mostrarFamilia();
-
-}
-
-
-function eliminarFamiliar(index){
-
-    const familiares =
-        cargar(
-            "familia",
-            []
-        );
-
-
-    familiares.splice(
-        index,
-        1
-    );
-
-
-    guardar(
-        "familia",
-        familiares
-    );
-
-
-    mostrarFamilia();
-
-}
-
-
-/* =====================================================
-   PERFIL
-===================================================== */
-
-function mostrarPerfil(){
-
-    const perfil =
-        cargar(
-            "perfil",
-            {
-
-                nombre:"",
-                edad:"",
-                informacion:"",
-                foto:""
-
-            }
-        );
-
-
-    window.fotoPerfilActual =
-        perfil.foto || "";
-
-
-    document.getElementById(
-        "contenido"
-    ).innerHTML=`
-
-    <div class="card perfil">
-
-        <h2>
-            👤 Mi perfil
-        </h2>
-
-
-        <div
-            class="profile-photo"
-            id="perfilFotoPreview">
-
-            ${
-                perfil.foto
-
-                ?
-
-                `<img
-                    src="${perfil.foto}"
-                    alt="Foto de perfil">`
-
-                :
-
-                "👤"
-            }
-
-        </div>
-
-
-        <label>
-            Foto de perfil
-        </label>
-
-
-        <input
-            type="file"
-            id="perfilFoto"
-            accept="image/*"
-            onchange="previsualizarFoto(event)">
-
-
-        <small>
-
-            Puedes seleccionar una foto de la persona
-            desde tu dispositivo.
-
-        </small>
-
-
-        <div class="item">
-
-            <label>
-                Nombre de la persona
-            </label>
-
-
-            <input
-                id="perfilNombre"
-                value="${perfil.nombre}"
-                placeholder="Nombre">
-
-        </div>
-
-
-        <div class="item">
-
-            <label>
-                Edad
-            </label>
-
-
-            <input
-                id="perfilEdad"
-                type="number"
-                value="${perfil.edad}"
-                placeholder="Edad">
-
-        </div>
-
-
-        <div class="item">
-
-            <label>
-                Información importante
-            </label>
-
-
-            <textarea
-                id="perfilInfo"
-                rows="4"
-                placeholder="Información importante">${perfil.informacion}</textarea>
-
-        </div>
-
-
-        <button
-            class="btn"
-            onclick="guardarPerfil()">
-
-            💾 Guardar perfil
-
-        </button>
-
-    </div>
-
-    `;
-
-}
-
-
-function previsualizarFoto(event){
-
-    const archivo =
-        event.target.files[0];
-
-
-    if(!archivo){
-
-        return;
-
-    }
-
-
-    if(
-        !archivo.type.startsWith(
-            "image/"
-        )
-    ){
-
-        alert(
-            "Selecciona una imagen válida."
-        );
-
-        return;
-
-    }
-
-
-    const lector =
-        new FileReader();
-
-
-    lector.onload=function(e){
-
-        window.fotoPerfilActual =
-            e.target.result;
-
-
-        const preview =
-            document.getElementById(
-                "perfilFotoPreview"
-            );
-
-
-        if(preview){
-
-            preview.innerHTML=`
-
-                <img
-                    src="${e.target.result}"
-                    alt="Foto de perfil">
-
-            `;
-
-        }
-
-    };
-
-
-    lector.readAsDataURL(
-        archivo
-    );
-
-}
-
-
-function guardarPerfil(){
-
-    const perfil={
-
-        nombre:
-            document.getElementById(
-                "perfilNombre"
-            ).value,
-
-        edad:
-            document.getElementById(
-                "perfilEdad"
-            ).value,
-
-        informacion:
-            document.getElementById(
-                "perfilInfo"
-            ).value,
-
-        foto:
-            window.fotoPerfilActual ||
-
-            cargar(
-                "perfil",
-                {}
-            ).foto ||
-
-            ""
-
-    };
-
-
-    guardar(
-        "perfil",
-        perfil
-    );
-
-
-    actualizarPerfilHeader();
-
-
-    window.fotoPerfilActual="";
-
-
-    alert(
-        "✅ Perfil guardado correctamente."
-    );
-
-}
-
-
-/* =====================================================
-   SEGURIDAD
-===================================================== */
-
-function mostrarSeguridad(){
-
-    const seguridad =
-        cargar(
-            "seguridad",
-            {
-
-                nombre:"",
-                telefono:"",
-                mensaje:""
-
-            }
-        );
-
-
-    document.getElementById(
-        "contenido"
-    ).innerHTML=`
-
-    <div class="card">
-
-        <h2>
-            🛡️ Seguridad
-        </h2>
-
-
-        <div class="alert">
-
-            <strong>
-                ⚠️ Contacto de emergencia
-            </strong>
-
-
-            <p>
-
-                Guarda una persona de confianza
-                para contactarla rápidamente.
-
-            </p>
-
-        </div>
-
-
-        <label>
-            Nombre del contacto
-        </label>
-
-
-        <input
-            id="seguridadNombre"
-            value="${seguridad.nombre}"
-            placeholder="Nombre">
-
-
-        <label>
-            Teléfono
-        </label>
-
-
-        <input
-            id="seguridadTelefono"
-            type="tel"
-            value="${seguridad.telefono}"
-            placeholder="Número de teléfono">
-
-
-        <label>
-            Mensaje
-        </label>
-
-
-        <textarea
-            id="seguridadMensaje"
-            rows="3"
-            placeholder="Mensaje de emergencia">${seguridad.mensaje}</textarea>
-
-
-        <button
-            class="btn"
-            onclick="guardarSeguridad()">
-
-            💾 Guardar
-
-        </button>
-
-
-        <div id="botonEmergencia"></div>
-
-    </div>
-
-    `;
-
-
-    mostrarBotonEmergencia(
-        seguridad
-    );
-
-}
-
-
-function guardarSeguridad(){
-
-    const seguridad={
-
-        nombre:
-            document.getElementById(
-                "seguridadNombre"
-            ).value,
-
-        telefono:
-            document.getElementById(
-                "seguridadTelefono"
-            ).value,
-
-        mensaje:
-            document.getElementById(
-                "seguridadMensaje"
-            ).value
-
-    };
-
-
-    guardar(
-        "seguridad",
-        seguridad
-    );
-
-
-    alert(
-        "✅ Contacto de emergencia guardado."
-    );
-
-
-    mostrarBotonEmergencia(
-        seguridad
-    );
-
-}
-
-
-function mostrarBotonEmergencia(
-    seguridad
-){
-
-    const contenedor =
-        document.getElementById(
-            "botonEmergencia"
-        );
-
-
-    if(!contenedor){
-
-        return;
-
-    }
-
-
-    if(seguridad.telefono){
-
-        contenedor.innerHTML=`
-
-        <br>
-
-
-        <div class="alert">
-
-            <strong>
-                Contacto:
-            </strong>
-
-            ${seguridad.nombre}
-
-
-            <br><br>
-
-
-            <a
-                href="tel:${seguridad.telefono}"
-                class="btn btn-danger">
-
-                📞 Llamar
-
-            </a>
-
-        </div>
-
-        `;
-
-    }
-
-}
-
-
-/* =====================================================
-   INICIO
-===================================================== */
-
-actualizarPerfilHeader();
-
-
-console.log(
-    "Viva Memoria iniciado correctamente."
-);
-
-</script>
-
-
 </body>
-
 </html>
-```
