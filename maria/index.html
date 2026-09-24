@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MariAle - Sabor Viacheño</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f0df;
+    color:#333;
+}
+
+/* ENCABEZADO */
+header{
+    background:#123d22;
+    color:white;
+    padding:12px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h1{
+    color:#f4c95d;
+    font-size:24px;
+}
+
+.logo span{
+    display:block;
+    color:white;
+    font-size:12px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#f4c95d;
+}
+
+/* PORTADA */
+.hero{
+    min-height:470px;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+
+.hero h2{
+    font-size:55px;
+    color:#f4c95d;
+    text-shadow:2px 2px 5px #000;
+}
+
+.hero h3{
+    font-size:28px;
+    margin:10px;
+}
+
+.hero p{
+    font-size:18px;
+    margin:15px;
+}
+
+.boton{
+    display:inline-block;
+    background:#e58b22;
+    color:white;
+    padding:13px 25px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:8px;
+}
+
+.boton:hover{
+    background:#f4c95d;
+    color:#123d22;
+}
+
+/* SECCIONES */
+section{
+    padding:55px 7%;
+}
+
+.titulo{
+    text-align:center;
+    color:#174d2a;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+/* MENU */
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.plato{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.plato:hover{
+    transform:translateY(-7px);
+}
+
+.plato img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.plato-info{
+    padding:18px;
+    text-align:center;
+}
+
+.plato h3{
+    color:#174d2a;
+    margin-bottom:8px;
+}
+
+.precio{
+    color:#d46a13;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px;
+}
+
+/* SERVICIOS */
+.servicios{
+    background:#174d2a;
+    color:white;
+}
+
+.servicios .titulo{
+    color:#f4c95d;
+}
+
+.servicio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.servicio{
+    background:#245d35;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.servicio .icono{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/* GALERIA */
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.galeria img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* UBICACION */
+.ubicacion{
+    text-align:center;
+    background:#eee4c9;
+}
+
+.mapa{
+    margin:25px auto;
+    max-width:800px;
+    padding:35px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 5px 15px #bbb;
+}
+
+/* CONTACTO */
+.contacto{
+    background:#123d22;
+    color:white;
+    text-align:center;
+}
+
+.contacto .titulo{
+    color:#f4c95d;
+}
+
+.contacto p{
+    margin:12px;
+}
+
+/* PIE */
+footer{
+    background:#092415;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.redes a{
+    color:#f4c95d;
+    text-decoration:none;
+    margin:10px;
+}
+
+/* RESPONSIVE CELULAR */
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav{
+        text-align:center;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:5px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:430px;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+
+    .hero h3{
+        font-size:22px;
+    }
+
+    section{
+        padding:40px 5%;
+    }
+
+    .titulo{
+        font-size:27px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+<header>
+
+<div class="logo">
+
+<!-- CAMBIA logo.jpg POR TU LOGOTIPO -->
+<img src="imagen.logotipo.jpeg" alt="Logo MariAle">
+
+<div>
+<h1>MariAle</h1>
+<span>Sabor Viacheño</span>
+</div>
+
+</div>
+
+<nav>
+<a href="#inicio">INICIO</a>
+<a href="#nosotros">NOSOTROS</a>
+<a href="#menu">MENÚ</a>
+<a href="#galeria">GALERÍA</a>
+<a href="#servicios">SERVICIOS</a>
+<a href="#ubicacion">UBICACIÓN</a>
+<a href="#contacto">CONTACTO</a>
+</nav>
+
+</header>
+
+
+<!-- PORTADA -->
+<section class="hero" id="inicio">
+
+<div>
+
+<h2>MariAle</h2>
+
+<h3>SABOR VIACHEÑO</h3>
+
+<p>RESTAURANTE</p>
+
+<p>
+Disfruta de los mejores platos preparados
+con ingredientes frescos y de calidad.
+</p>
+
+<a class="boton" href="#menu">VER MENÚ</a>
+
+<a class="boton" href="#contacto">RESERVAR</a>
+
+</div>
+
+</section>
+
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+
+<h2 class="titulo">🍽️ Sobre Nosotros</h2>
+
+<p style="text-align:center;max-width:800px;margin:auto;line-height:1.8;">
+
+<strong>MariAle Sabor Viacheño</strong> es un restaurante
+dedicado a ofrecer deliciosos platos preparados con
+ingredientes frescos y de excelente calidad.
+
+Nuestro objetivo es brindar a nuestros clientes
+una experiencia agradable, con buena atención,
+comida deliciosa y un ambiente familiar.
+
+</p>
+
+</section>
+
+<!-- MENU -->
+<section id="menu">
+
+    <h2 class="titulo">🍴 Nuestro Menú</h2>
+    
+    <div class="menu">
+    
+        <!-- COMIDA 1 -->
+        <div class="plato">
+            <img src="imagen.piquemacho.jpeg" alt="Pique Macho">
+    
+            <div class="plato-info">
+                <h3>Pique Macho</h3>
+                <div class="precio">Bs. 100</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 2 -->
+        <div class="plato">
+            <img src="imagen.trucha.jpeg" alt="Trucha a la Plancha">
+    
+            <div class="plato-info">
+                <h3>Trucha a la Plancha</h3>
+                <div class="precio">Bs. 90</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 3 -->
+        <div class="plato">
+            <img src="imagen.parrillapersonal.jpeg" alt="Parrilla Personal">
+    
+            <div class="plato-info">
+                <h3>Parrilla Personal</h3>
+                <div class="precio">Bs. 110</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 4 -->
+        <div class="plato">
+            <img src="imagen.parrilla bi-persinal.jpeg" alt="Parrilla Bi-Personal">
+    
+            <div class="plato-info">
+                <h3>Parrilla Bi-Personal</h3>
+                <div class="precio">Bs. 220</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 5 -->
+        <div class="plato">
+            <img src="imagen.planchita.jpeg" alt="Planchita">
+    
+            <div class="plato-info">
+                <h3>Planchita</h3>
+                <div class="precio">Bs. 110</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 6 -->
+        <div class="plato">
+            <img src="imagen.escabeche.jpeg" alt="Escabeche Mixto">
+    
+            <div class="plato-info">
+                <h3>Escabeche Mixto</h3>
+                <div class="precio">Bs. 90</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+        <!-- COMIDA 7 -->
+        <div class="plato">
+            <img src="imagen.lechon.jpeg" alt="Lechon">
+    
+            <div class="plato-info">
+                <h3>Lechon</h3>
+                <div class="precio">Bs. 90</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    
+    
+    </section>
+
+    <!-- BEBIDAS -->
+<section id="bebidas">
+
+    <h2 class="titulo">🥤 Nuestras Bebidas</h2>
+    
+    <div class="menu">
+    
+        <!-- BEBIDA 1 -->
+        <div class="plato">
+            <img src="imagen.cocacola.jpeg" alt="Coca Cola">
+    
+            <div class="plato-info">
+                <h3>Coca Cola</h3>
+                <div class="precio">Bs. 15</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+        <!-- BEBIDA 2 -->
+        <div class="plato">
+            <img src="imagen.huari.jpeg" alt="Cerveza Huari">
+    
+            <div class="plato-info">
+                <h3>Cerveza Huari</h3>
+                <div class="precio">Bs. 25</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+        <!-- BEBIDA 3 -->
+        <div class="plato">
+            <img src="imagen.frutall.jpeg" alt="Frut-all">
+    
+            <div class="plato-info">
+                <h3>Frut-all</h3>
+                <div class="precio">Bs. 18</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+        <!-- BEBIDA 4 -->
+        <div class="plato">
+            <img src="imagen.vino.jpeg" alt="Vino">
+    
+            <div class="plato-info">
+                <h3>Vino</h3>
+                <div class="precio">Bs. 60</div>
+                <a class="boton" href="#contacto">PEDIR</a>
+            </div>
+        </div>
+    
+    </div>
+    
+    </section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+
+<h2 class="titulo">⭐ Nuestros Servicios</h2>
+
+<div class="servicio-grid">
+
+<div class="servicio">
+
+<div class="icono">📅</div>
+
+<h3>Reservas</h3>
+
+<p>Reserva tu mesa fácilmente.</p>
+
+</div>
+
+
+<div class="servicio">
+
+<div class="icono">🛵</div>
+
+<h3>Pedidos en Línea</h3>
+
+<p>Realiza tus pedidos desde cualquier lugar.</p>
+
+</div>
+
+
+<div class="servicio">
+
+<div class="icono">🎉</div>
+
+<h3>Eventos</h3>
+
+<p>Atención para cumpleaños y eventos especiales.</p>
+
+</div>
+
+
+<div class="servicio">
+
+<div class="icono">🍴</div>
+
+<h3>Atención Familiar</h3>
+
+<p>Un espacio agradable para compartir.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALERIA -->
+<section id="galeria">
+
+<h2 class="titulo">📸 Galería</h2>
+
+<div class="galeria">
+
+<img src="imagen.galeria1.jpeg">
+
+<img src="imagen.galeria2.jpeg">
+
+<img src="imagen.galeria3.jpeg">
+
+<img src="imagen.galeria4.jpeg">
+
+</div>
+
+</section>
+
+
+<!-- UBICACION -->
+<section class="ubicacion" id="ubicacion">
+
+<h2 class="titulo">📍 Nuestra Ubicación</h2>
+
+<div class="mapa">
+
+<h3>📌 Restaurante MariAle</h3>
+
+<p>Viacha, Bolivia</p>
+
+<p>Visítanos y disfruta de nuestros deliciosos platos.</p>
+
+<br>
+
+<a class="boton"
+href="https://www.google.com/maps"
+target="_blank">
+
+ABRIR GOOGLE MAPS
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+
+<h2 class="titulo">📞 Contáctanos</h2>
+
+<p>📱 WhatsApp: 69855157</p>
+
+<p>📧 Email: mariale@gmail.com</p>
+
+<p>📍 Ubicación: Bolivia</p>
+
+<br>
+
+<a class="boton"
+href="https://wa.me/59169855157"
+target="_blank">
+
+💬 PEDIR POR WHATSAPP
+
+</a>
+
+<a class="boton"
+href="tel:+59169855157">
+
+📞 LLAMAR
+
+</a>
+
+</section>
+
+
+<!-- PIE -->
+<footer>
+
+<h3>MariAle - Sabor Viacheño</h3>
+
+<p>© 2026 Todos los derechos reservados.</p>
+
+<br>
+
+<div class="redes">
+
+<a href="#">TikTok</a>
+
+<a href="#">WhatsApp</a>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
